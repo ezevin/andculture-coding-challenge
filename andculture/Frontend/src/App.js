@@ -7,6 +7,8 @@ import Main from './Containers/Main'
 class App extends Component{
   state = {
     breweries: [],
+    newBreweries: [],
+    allBreweries: [],
     names: []
   }
 
@@ -15,11 +17,25 @@ class App extends Component{
     .then(res => res.json())
     .then(data => this.setState({breweries: data}))
 
+    fetch(`http://localhost:3000/breweries`)
+    .then(res => res.json())
+    .then(data => this.setState({newBreweries: data}))
+
+    this.state.breweries.map(brewery => {
+      this.state.newBreweries.map(brew => {
+        let allBreweries = []
+        allBreweries.push(brewery, brew)
+        return allBreweries
+      })
+    })
+    // this.setState({allBreweries: (this.state.breweries, this.state.newBreweries).join()})
 
   }
 
   render (){
-    // console.log(this.state.breweries)
+    console.log(this.state.breweries)
+    console.log(this.state.newBreweries);
+    console.log(this.state.allBreweries);
     return (
       <div>
         <center>

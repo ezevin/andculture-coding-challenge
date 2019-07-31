@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+brooklyn = Brewery.create(name: "Brooklyn Brewery", brewery_type: "craft", country: "USA", website_url: "https://brooklynbrewery.com/")
