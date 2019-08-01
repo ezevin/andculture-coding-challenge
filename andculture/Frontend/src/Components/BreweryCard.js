@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-import { Card, Grid } from 'semantic-ui-react'
+import { Container, Grid, Header } from 'semantic-ui-react'
 // import { withRouter } from 'react-router-dom'
 // import Map from './Map'
 
@@ -23,28 +23,28 @@ class BreweryCard extends Component {
     return (
       <div>
         <Grid>
-          <Grid.Column width={8}>
-            <Card>
-                  Brewery Type: {type} <br />
-                  Phone Number: {phone} <br />
-                  Address: {street} <br />
-                  {city}, {country}, {postal}<br />
-                  Webpage: <a href={url}>{url}</a>
-            </Card>
+          <Grid.Column width={11}>
+            <Container className="info">
+              <Header as="h3">Brewery Type: {type}</Header>
+              <Header as="h3">Phone Number: {phone.slice(0,3)}-{phone.slice(3,6)}-{phone.slice(6,10)} </Header>
+              <Header as="h3">Address: <br />
+                {street}  <br />
+                {city}, {country}, {postal}
+              </Header>
+              <Header as="h3">Webpage: <a href={url}>{url}</a></Header>
+            </Container>
           </Grid.Column>
-          <Grid.Column width={8}>
-            <div style={{ height: '50vh', width: '100%' }}>
-          <GoogleMapReact
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-          >
-            <AnyReactComponent
-              lat={latitude}
-              lng={longitude}
-              text="My Marker"
-            />
-          </GoogleMapReact>
-        </div>
+          <Grid.Column width={5}>
+            <div style={{ height: '25vh', width: '100%' }}>
+              <GoogleMapReact
+                defaultCenter={this.props.center}
+                defaultZoom={this.props.zoom}>
+                <AnyReactComponent
+                  lat={latitude}
+                  lng={longitude}
+                  text="My Marker"/>
+              </GoogleMapReact>
+            </div>
           </Grid.Column>
         </Grid>
       </div>

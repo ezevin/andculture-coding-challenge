@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import { Route, withRouter } from 'react-router-dom'
+
 import './App.css';
 
 import Main from './Containers/Main'
@@ -7,43 +8,41 @@ import Main from './Containers/Main'
 class App extends Component{
   state = {
     breweries: [],
-    newBreweries: [],
-    allBreweries: [],
-    names: []
+    backBreweries: [],
+    names: [],
+    showing: []
   }
 
   componentDidMount(){
+
     fetch(`https://api.openbrewerydb.org/breweries`)
     .then(res => res.json())
     .then(data => this.setState({breweries: data}))
 
     fetch(`http://localhost:3000/breweries`)
     .then(res => res.json())
-    .then(data => this.setState({newBreweries: data}))
-
-    this.state.breweries.map(brewery => {
-      this.state.newBreweries.map(brew => {
-        let allBreweries = []
-        allBreweries.push(brewery, brew)
-        return allBreweries
-      })
-    })
-    // this.setState({allBreweries: (this.state.breweries, this.state.newBreweries).join()})
+    .then(data => this.setState({backBreweries: data}))
 
   }
 
+  fetchBreweries = () => {
+    fetch(`http://localhost:3000/breweries`)
+    .then(res => res.json())
+    .then(data => this.setState({backBreweries: data}))
+  }
+
   render (){
-    console.log(this.state.breweries)
-    console.log(this.state.newBreweries);
-    console.log(this.state.allBreweries);
+
     return (
-      <div>
-        <center>
-          <h1>Tapped Out</h1>
-          <h2>Brought To You By andCulture</h2>
-        </center>
-          <Main breweries={this.state.breweries}/>
-        <p align="right"> ©Elizabeth Zevin</p>
+      <div className="background">
+        <div className="title">
+          <center>
+            <h1 className="head">Tapped Out</h1>
+            <h2 className="subHead">Brought to you By andCulture</h2>
+          </center>
+        </div>
+          <Main breweries={this.state.breweries} backBreweries={this.state.backBreweries} fetchBreweries={this.fetchBreweries}/>
+        <p align="right" className="footer"> ©Elizabeth Zevin</p>
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import { withRouter } from 'react-router-dom'
-import { Search } from 'semantic-ui-react'
+import { Search, Form } from 'semantic-ui-react'
 
 import Breweries from '../Components/Breweries'
 
 
-class BreweryList extends Component {
+class BackBreweryList extends Component {
   state = {
     search: "",
     country: ""
@@ -28,16 +28,18 @@ class BreweryList extends Component {
         <center>
           <Search width={16} onSearchChange={this.handleSearch} placeholder="Search By Name" showNoResults={false}/>
         </center>
+        <div>
         <br />
         <div className="accordion">
           {filteredBreweries.map(brewery =>(
             <Breweries key={brewery.id} name={brewery.name} city={brewery.city} type={brewery.brewery_type} country={brewery.country} latitude={brewery.latitude} longitude={brewery.longitude} phone={brewery.phone} postal={brewery.postal_code} street={brewery.street} url={brewery.website_url}/>
           ))}
         </div>
+
       </div>
     )
   }
 }
 
-export default BreweryList
+export default BackBreweryList
 // <Dropdown clearable fluid multiple search selection options={} placeholder='Select City'/><br />

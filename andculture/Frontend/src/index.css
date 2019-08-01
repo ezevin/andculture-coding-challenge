@@ -5,9 +5,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://images.pond5.com/beautiful-beer-bubbles-rising-loopable-footage-070488103_prevstill.jpeg);
+  background-repeat: repeat;
+  /* background-position: center; */
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.head {
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
+  text-shadow: 3px 2px white;
+}
+.subHead {
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  text-shadow: 3px 2px white;
+}
+.form {
+  width: 50%;
+  position: relative;
+  margin-left: 25%
+}
+
+.title {
+  margin: 30px;
+}
+
+.accordion {
+  margin-left: 10px;
+  margin-right: 30px;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+}
+
+.info {
+  color: brown;
 }
