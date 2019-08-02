@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_195312) do
+ActiveRecord::Schema.define(version: 2019_08_02_160158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "breweries", force: :cascade do |t|
-    t.string "name"
-    t.string "city"
-    t.string "brewery_type"
-    t.string "country"
+    t.string "name", default: "name"
+    t.string "city", default: "city"
+    t.string "brewery_type", default: "brewery type"
+    t.string "country", default: "country"
     t.string "latitude"
     t.string "longitude"
-    t.string "phone"
-    t.string "postal_code"
-    t.string "street"
-    t.string "website_url"
+    t.string "phone", default: "phone"
+    t.string "postal_code", default: "postal code"
+    t.string "street", default: "street"
+    t.string "website_url", default: "website url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

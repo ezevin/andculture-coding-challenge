@@ -10,16 +10,16 @@ import BackBreweryList from './BackBreweryList'
 class Main extends Component {
   state = {
     active: true,
-    name: "",
-    city: "",
-    brewery_type: "",
-    country: "",
+    name: "name",
+    city: "city",
+    brewery_type: "brewery_type",
+    country: "country",
     latitude: "",
     longitude: "",
-    phone: "",
-    postal_code: "",
-    street: "",
-    website_url: ""
+    phone: "phone",
+    postal_code: "postal code",
+    street: "street",
+    website_url: "url"
   }
 
   toggle = (e) => {
