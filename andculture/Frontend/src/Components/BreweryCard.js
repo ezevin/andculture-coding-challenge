@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 import { Container, Grid, Header } from 'semantic-ui-react'
-// import { withRouter } from 'react-router-dom'
-// import Map from './Map'
 
-// API_KEY = bootstrapURLKeys
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 class BreweryCard extends Component {
@@ -18,7 +15,7 @@ class BreweryCard extends Component {
   }
 
   render (){
-    // console.log(this.props);
+
     const { type, phone, street, city, country, postal, url, latitude, longitude} = this.props
     return (
       <div>

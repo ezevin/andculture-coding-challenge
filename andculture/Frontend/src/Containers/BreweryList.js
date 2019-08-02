@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { withRouter } from 'react-router-dom'
+
 import { Search } from 'semantic-ui-react'
 
 import Breweries from '../Components/Breweries'
@@ -17,12 +17,11 @@ class BreweryList extends Component {
   }
 
   render (){
-    // console.log(this.props.breweries);
+
     const filteredBreweries = this.props.breweries.filter(brewery =>{
       return brewery.name.toLowerCase().includes(this.state.search.toLowerCase())
     })
-    // const city = this.props.breweries.map(brewery => brewery.city )
-    // console.log(city);
+
     return (
       <div>
         <center>
@@ -40,4 +39,3 @@ class BreweryList extends Component {
 }
 
 export default BreweryList
-// <Dropdown clearable fluid multiple search selection options={} placeholder='Select City'/><br />

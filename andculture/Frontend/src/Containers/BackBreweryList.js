@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { withRouter } from 'react-router-dom'
-import { Search, Form } from 'semantic-ui-react'
+
+import { Search } from 'semantic-ui-react'
 
 import BackBreweries from '../Components/BackBreweries'
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Accordion, Icon, Header } from 'semantic-ui-react'
-// import { withRouter } from 'react-router-dom'
 
 import BreweryCard from '../Components/BreweryCard'
 
@@ -18,7 +17,6 @@ class Breweries extends Component {
  }
 
   render (){
-    // console.log(this.state);
     const { name } = this.props
     const { activeIndex } = this.state
     return (

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-import { Container, Grid, Header, Button, Form, Modal } from 'semantic-ui-react'
-// import { withRouter } from 'react-router-dom'
+import { Container, Grid, Header, Button } from 'semantic-ui-react'
+
 import BreweryType from '../Forms/BreweryType'
 import City from '../Forms/City'
 import Country from '../Forms/Country'
@@ -11,7 +11,6 @@ import PostalCode from '../Forms/PostalCode'
 import Street from '../Forms/Street'
 import WebsiteURL from '../Forms/WebsiteURL'
 
-// API_KEY = bootstrapURLKeys
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 class BackBreweryCard extends Component {
@@ -24,8 +23,7 @@ class BackBreweryCard extends Component {
   }
 
   render (){
-    // console.log(this.props);
-    const { brewery_type, phone, street, city, country, postal, website_url, latitude, longitude, id, name} = this.props
+    const { brewery_type, phone, street, city, country, postal, website_url, latitude, longitude, id } = this.props
 
 
     return (
@@ -45,7 +43,7 @@ class BackBreweryCard extends Component {
                 <Country id={id} country={country} fetchBreweries={this.props.fetchBreweries}/>, <PostalCode id={id} postal={postal} fetchBreweries={this.props.fetchBreweries}/>
               </Header>
               <Header as="h3">
-                <WebsiteURL id={id} website_url={website_url} fetchBreweries={this.props.fetchBreweries}/><a href={website_url} target="_blank">{website_url}</a></Header>
+                <WebsiteURL id={id} website_url={website_url} fetchBreweries={this.props.fetchBreweries}/><a href={website_url} target="_blank" rel="noopener noreferrer">{website_url}</a></Header>
               <Button color='black' onClick={()=> this.props.deleteBreweries(id)}>Delete</Button>
             </Container>
           </Grid.Column>

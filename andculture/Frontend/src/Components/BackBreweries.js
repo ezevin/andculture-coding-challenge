@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Accordion, Icon, Header } from 'semantic-ui-react'
-// import { withRouter } from 'react-router-dom'
 
 import BackBreweryCard from '../Components/BackBreweryCard'
 
