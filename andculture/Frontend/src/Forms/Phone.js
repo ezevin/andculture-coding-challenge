@@ -56,7 +56,7 @@ class Phone extends Component {
     return (
       <Popup
         content={form}
-        trigger={<h3>Phone Number:</h3>}
+        trigger={<span>Phone Number:</span>}
         on='click'
         position='top center'
         open={this.state.isOpen}

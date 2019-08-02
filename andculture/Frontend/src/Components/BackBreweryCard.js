@@ -23,8 +23,6 @@ class BackBreweryCard extends Component {
     zoom: 11
   }
 
-
-
   render (){
     // console.log(this.props);
     const { brewery_type, phone, street, city, country, postal, website_url, latitude, longitude, id, name} = this.props
@@ -48,7 +46,7 @@ class BackBreweryCard extends Component {
               </Header>
               <Header as="h3">
                 <WebsiteURL id={id} website_url={website_url} fetchBreweries={this.props.fetchBreweries}/><a href={website_url} target="_blank">{website_url}</a></Header>
-              <Button color="black">Delete</Button>
+              <Button color='black' onClick={()=> this.props.deleteBreweries(id)}>Delete</Button>
             </Container>
           </Grid.Column>
           <Grid.Column width={5}>

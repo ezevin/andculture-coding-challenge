@@ -30,7 +30,7 @@ class BackBreweries extends Component {
           </Header>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
-          <BackBreweryCard fetchBreweries={this.props.fetchBreweries} brewery_type={this.props.brewery_type} city={this.props.city} country={this.props.country} latitude={this.props.latitude} longitude={this.props.longitude} phone={this.props.phone} postal={this.props.postal} street={this.props.street} website_url={this.props.website_url}
+          <BackBreweryCard deleteBreweries={this.props.deleteBreweries} fetchBreweries={this.props.fetchBreweries} brewery_type={this.props.brewery_type} city={this.props.city} country={this.props.country} latitude={this.props.latitude} longitude={this.props.longitude} phone={this.props.phone} postal={this.props.postal} street={this.props.street} website_url={this.props.website_url}
           name={this.props.name}
           id={this.props.id}/>
         </Accordion.Content>

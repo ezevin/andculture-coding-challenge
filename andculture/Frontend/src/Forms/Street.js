@@ -56,7 +56,7 @@ class Street extends Component {
     return (
       <Popup
         content={form}
-        trigger={<span className="pointer"  inverted color='grey'>{this.props.street}</span>}
+        trigger={<span className="pointer">{this.props.street}</span>}
         on='click'
         position='top center'
         open={this.state.isOpen}

@@ -31,6 +31,13 @@ class App extends Component{
     .then(data => this.setState({backBreweries: data}))
   }
 
+  deleteBreweries = (id) => {
+    fetch(`http://localhost:3000/breweries/${id}`, {
+      method:"delete"
+    })
+    .then(() =>this.fetchBreweries())
+  }
+
   render (){
 
     return (
@@ -41,7 +48,8 @@ class App extends Component{
             <h2 className="subHead">Brought to you By andCulture</h2>
           </center>
         </div>
-          <Main breweries={this.state.breweries} backBreweries={this.state.backBreweries} fetchBreweries={this.fetchBreweries}/>
+          <Main breweries={this.state.breweries} backBreweries={this.state.backBreweries} fetchBreweries={this.fetchBreweries}
+          deleteBreweries={this.deleteBreweries}/>
         <p align="right" className="footer"> ©Elizabeth Zevin</p>
       </div>
     );

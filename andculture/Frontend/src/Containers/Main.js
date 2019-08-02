@@ -118,7 +118,7 @@ class Main extends Component {
             </Grid.Column>
             </Grid>
           </Form><br />
-          <BackBreweryList  fetchBreweries={this.props.fetchBreweries} breweries={this.props.backBreweries}/>
+          <BackBreweryList deleteBreweries={this.props.deleteBreweries} fetchBreweries={this.props.fetchBreweries} breweries={this.props.backBreweries}/>
           </>
         }
       </div>

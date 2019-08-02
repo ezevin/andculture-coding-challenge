@@ -44,7 +44,7 @@ class WebsiteURL extends Component {
         this.setState({isOpen: false})
   }
   render(){
-    console.log(this.props)
+
     const value = this.state.website_url
 
     const form = <Form onSubmit={this.handleSubmit}>

@@ -29,7 +29,7 @@ class BackBreweryList extends Component {
         <br />
         <div className="accordion">
           {filteredBreweries.map(brewery =>(
-            <BackBreweries key={brewery.id} fetchBreweries={this.props.fetchBreweries} name={brewery.name} id={brewery.id} city={brewery.city} brewery_type={brewery.brewery_type} country={brewery.country} latitude={brewery.latitude} longitude={brewery.longitude} phone={brewery.phone} postal={brewery.postal_code} street={brewery.street} website_url={brewery.website_url}/>
+            <BackBreweries key={brewery.id} deleteBreweries={this.props.deleteBreweries} fetchBreweries={this.props.fetchBreweries} name={brewery.name} id={brewery.id} city={brewery.city} brewery_type={brewery.brewery_type} country={brewery.country} latitude={brewery.latitude} longitude={brewery.longitude} phone={brewery.phone} postal={brewery.postal_code} street={brewery.street} website_url={brewery.website_url}/>
           ))}
         </div>
       </div>

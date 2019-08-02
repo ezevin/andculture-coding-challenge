@@ -19,6 +19,11 @@ class BreweriesController < ApplicationController
     render json: @brewery
   end
 
+  def destroy
+    get_brewery.destroy
+
+  end
+
   private
 
   def get_brewery
