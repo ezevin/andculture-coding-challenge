@@ -2,27 +2,24 @@ import React, { Component } from 'react';
 // import { withRouter } from 'react-router-dom'
 import { Search, Form } from 'semantic-ui-react'
 
-import Breweries from '../Components/Breweries'
+import BackBreweries from '../Components/BackBreweries'
 
 
 class BackBreweryList extends Component {
   state = {
-    search: "",
-    country: ""
+    search: ""
   }
 
   handleSearch = (e, {value}) => {
     this.setState({search: value})
-    console.log(value)
   }
 
   render (){
-    // console.log(this.props.breweries);
+
     const filteredBreweries = this.props.breweries.filter(brewery =>{
       return brewery.name.toLowerCase().includes(this.state.search.toLowerCase())
     })
-    // const city = this.props.breweries.map(brewery => brewery.city )
-    // console.log(city);
+
     return (
       <div>
         <center>
@@ -32,14 +29,13 @@ class BackBreweryList extends Component {
         <br />
         <div className="accordion">
           {filteredBreweries.map(brewery =>(
-            <Breweries key={brewery.id} name={brewery.name} city={brewery.city} type={brewery.brewery_type} country={brewery.country} latitude={brewery.latitude} longitude={brewery.longitude} phone={brewery.phone} postal={brewery.postal_code} street={brewery.street} url={brewery.website_url}/>
+            <BackBreweries key={brewery.id} fetchBreweries={this.props.fetchBreweries} name={brewery.name} id={brewery.id} city={brewery.city} brewery_type={brewery.brewery_type} country={brewery.country} latitude={brewery.latitude} longitude={brewery.longitude} phone={brewery.phone} postal={brewery.postal_code} street={brewery.street} website_url={brewery.website_url}/>
           ))}
         </div>
-
       </div>
+    </div>
     )
   }
 }
 
 export default BackBreweryList
-// <Dropdown clearable fluid multiple search selection options={} placeholder='Select City'/><br />

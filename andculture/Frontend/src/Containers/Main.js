@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Button, Form, Grid } from 'semantic-ui-react'
 
 import BreweryList from './BreweryList'
-import BackBreweryList from './BreweryList'
+import BackBreweryList from './BackBreweryList'
 
 
 
@@ -118,7 +118,7 @@ class Main extends Component {
             </Grid.Column>
             </Grid>
           </Form><br />
-          <BackBreweryList breweries={this.props.backBreweries}/>
+          <BackBreweryList  fetchBreweries={this.props.fetchBreweries} breweries={this.props.backBreweries}/>
           </>
         }
       </div>
